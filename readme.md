@@ -28,23 +28,42 @@ You can download the latest version of HermitScript from the [releases](google.c
 The syntax for writing dialogue in HermitScript is as follows:
 
 ```md
-**TestConversation**
-`Andrew`(2): Hi, I'm Andrew. How are you doing today? <SET apples 10/> <GET oranges 3/> <HELP 4 5 3> <SHAKE hands/> <SET Grapes 4 5>
-`Lara`(1): I'm doing [wave]great[/wave], thanks for asking. How are you? <HELP 4 5 3/> <SHAKE hands>
+<!--  -->
 
-- I'm doing great **TestConversationGreat**
-- I'm doing okay **TestConversationOkay**
-- I'm doing bad **TestConversationBad**
+**SimpleConversation**
+`Jack`(0): Hello Jill how are doing today?
+`Jill`(1): I'm doing great!
+`Jack`(1): Me too! Want to go climb up that steep hill?
+`Jill`(3): Maybe later, I'm a little tired.
+`Jack`(2): Oh, okay. I'll see you later then.
 
-**TestConversationGreat**
-`Andrew`(0): I'm doing great as well!
-`Lara`(0): That's great to hear! <Shake 3 5 4>
+<!--  -->
 
-**TestConversationOkay**
-`Andrew`(0): I'm doing okay!
+**ConversationWithQuestions**
+`Jack`(0): Hello Jill how are doing today?
+`Jill`(1): I'm doing great! How are you?
 
-**TestConversationBad**
-`Andrew`(0): I'm not doing so good...
+- I'm doing great! **ConversationWithQuestionsGreat**
+- I'm doing okay. **ConversationWithQuestionsOkay**
+- I'm doing terrible. **ConversationWithQuestionsTerrible**
+
+**ConversationWithQuestionsGreat**
+`Jack`(0): Me too! What amazing weather we're having!
+
+**ConversationWithQuestionsOkay**
+`Jack`(0): I'm alright i guess.
+
+**ConversationWithQuestionsTerrible**
+`Jack`(0): Nothing is going right for me today.
+
+<!--  -->
+
+**FunctionsExample**
+`Jack`(0): Hello Jill how are doing today? <Wave 45 /> <!-- The /> at the end indicates that this function is run after the text is displayed -->
+`Jill`(1): I'm busy right now! <Shake 2 2> <!-- The > at the end indicates that this function is run before the text is displayed -->
+`Jack`(2): Oh, okay. I'll see you later then.
+
+<!-- Note: Dont add function to the end of questions, that wouldn't make much sense anyway -->
 ```
 
 Each conversation is marked by a heading in the format **ConversationName**. Each line of dialogue is written in the format ``Speaker(subimage): Message, where Speaker is the name of the speaker, subimage is an optional subimage number, and Message is the text of the message. Custom actions and commands can be added using tags in the format <ActionName Param1 Param2 ...>.

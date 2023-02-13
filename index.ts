@@ -9,6 +9,8 @@ readline.question("What is the file name? ", (fileName: string) => {
   console.log(`Watching ${fileName} for changes... (press Ctrl+C to exit)`);
   readline.close();
 
+  main(fileName);
+
   fs.watch(fileName, () => {
     main(fileName);
   });
