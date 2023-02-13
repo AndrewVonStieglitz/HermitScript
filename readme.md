@@ -1,6 +1,9 @@
+# HermitScript
+
+HermitScript is a software designed to make writing dialogue for video games easier and more efficient. Written in TypeScript and using Node.js, this software provides a clear and concise syntax for writing dialogue.
+
 # Table of Contents
 
-- [Introduction](#introduction)
 - [Download](#download)
 - [Features](#features)
 - [Requirements](#requirements)
@@ -9,10 +12,6 @@
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
-
-# Introduction
-
-HermitScript is a software designed to make writing dialogue for video games easier and more efficient. Written in TypeScript and using Node.js, this software provides a clear and concise syntax for writing dialogue.
 
 # Download
 
@@ -54,8 +53,8 @@ Each conversation is marked by a heading in the format **ConversationName**. Eac
 
 Clone the repository to your local machine
 Run npm install to install the dependencies
-Build the project using npm run build
-Run the project using npm start
+Run tsc index.ts to compile the TypeScript code
+Run node index.js to run the program
 
 # License
 
