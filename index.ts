@@ -1,11 +1,20 @@
 import * as fs from "fs";
 
-// Watch the "data.md" file and call main() function whenever it changes
-fs.watch("data.md", () => {
-  main();
+const readline = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout,
 });
 
-function main() {
+readline.question("What is the file name? ", (fileName: string) => {
+  console.log(`Watching ${fileName} for changes... (press Ctrl+C to exit)`);
+  readline.close();
+
+  fs.watch(fileName, () => {
+    main(fileName);
+  });
+});
+
+function main(fileName: string) {
   // Extracts the exec and postexec commands from a given text
   const extractExecPostexec = (text: string): [string, string[], string[]] => {
     let execList: string[] = []; // An array to store exec commands
@@ -186,6 +195,5 @@ function main() {
     return writeToFile(json, outputFile);
   };
 
-  // Convert the "data.md" file to "data.json" file
-  markdownToJson("data.md", "data.json");
+  markdownToJson(fileName, "data.json");
 }

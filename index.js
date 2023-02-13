@@ -1,11 +1,18 @@
 "use strict";
 exports.__esModule = true;
 var fs = require("fs");
-// Watch the "data.md" file and call main() function whenever it changes
-fs.watch("data.md", function () {
-    main();
+var readline = require("readline").createInterface({
+    input: process.stdin,
+    output: process.stdout
 });
-function main() {
+readline.question("What is the file name? ", function (fileName) {
+    console.log("Watching ".concat(fileName, " for changes ..."));
+    readline.close();
+    fs.watch(fileName, function () {
+        main(fileName);
+    });
+});
+function main(fileName) {
     // Extracts the exec and postexec commands from a given text
     var extractExecPostexec = function (text) {
         var execList = []; // An array to store exec commands
@@ -151,6 +158,5 @@ function main() {
         // Write the JSON object to a file
         return writeToFile(json, outputFile);
     };
-    // Convert the "data.md" file to "data.json" file
-    markdownToJson("data.md", "data.json");
+    markdownToJson(fileName, "data.json");
 }
