@@ -1,0 +1,85 @@
+{
+  "TestConversation": [
+    {
+      "name": "Andrew",
+      "subimage": "2",
+      "message": "Hi, I'm Andrew. How are you doing today?",
+      "exec": [
+        "HELP 4 5 3",
+        "SET Grapes 4 5"
+      ],
+      "postexec": [
+        "SET apples 10",
+        "GET oranges 3",
+        "SHAKE hands"
+      ]
+    },
+    {
+      "name": "Lara",
+      "subimage": "1",
+      "message": "I'm doing [wave]great[/wave], thanks for asking. How are you?",
+      "options": [
+        {
+          "response": "I'm doing great",
+          "goto": "TestConversationGreat",
+          "exec": [],
+          "postexec": []
+        },
+        {
+          "response": "I'm doing okay",
+          "goto": "TestConversationOkay",
+          "exec": [],
+          "postexec": []
+        },
+        {
+          "response": "I'm doing bad",
+          "goto": "TestConversationBad",
+          "exec": [],
+          "postexec": []
+        }
+      ],
+      "exec": [
+        "SHAKE hands"
+      ],
+      "postexec": [
+        "HELP 4 5 3"
+      ]
+    }
+  ],
+  "TestConversationGreat": [
+    {
+      "name": "Andrew",
+      "subimage": "0",
+      "message": "I'm doing great aswell!",
+      "exec": [],
+      "postexec": []
+    },
+    {
+      "name": "Lara",
+      "subimage": "0",
+      "message": "That's great to hear!",
+      "exec": [
+        "Shake 3 5 4"
+      ],
+      "postexec": []
+    }
+  ],
+  "TestConversationOkay": [
+    {
+      "name": "Andrew",
+      "subimage": "0",
+      "message": "I'm doing okay!",
+      "exec": [],
+      "postexec": []
+    }
+  ],
+  "TestConversationBad": [
+    {
+      "name": "Andrew",
+      "subimage": "0",
+      "message": "I'm not doing so good...",
+      "exec": [],
+      "postexec": []
+    }
+  ]
+}
