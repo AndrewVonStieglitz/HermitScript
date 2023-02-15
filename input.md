@@ -2,7 +2,7 @@
 
 ## Subheading
 
-Hello **world** testing
+Hello **bold text** testing
 
 This is another paragraph. [go here](#Another-Subheading) [no here](#Subheading)
 
