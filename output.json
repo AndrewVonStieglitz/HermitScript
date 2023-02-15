@@ -36,16 +36,8 @@
         "Actions": []
       },
       {
-        "Text": "A competition do you want to help?",
-        "Actions": [
-          {
-            "Name": "SAY",
-            "Arguments": [
-              "'Hello",
-              "World'"
-            ]
-          }
-        ]
+        "Text": "A competition do you want to help? [Sure Would love to!](Sure) [Maybe Later](Maybe-Later) [No](No)",
+        "Actions": []
       }
     ],
     "Sure": [
