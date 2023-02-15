@@ -1,7 +1,7 @@
 const fs = require("fs");
 const input = fs.readFileSync("./input.md", "utf8");
 
-function convertToOutput(input) {
+function initialOutputFunction(input) {
   const output = {};
 
   let currentSection = null;
@@ -41,7 +41,31 @@ function parseLine(line) {
   let match;
   while ((match = regex.exec(line)) !== null) {
     const [fullMatch, name, arguments] = match;
-    const argArray = arguments ? arguments.split(/\s+/) : [];
+    let argArray = [];
+    if (arguments) {
+      argArray = arguments.split(/\s+/);
+      let insideBackticks = false;
+      let backtickArgs = [];
+      for (let i = 0; i < argArray.length; i++) {
+        if (argArray[i].startsWith("`")) {
+          insideBackticks = true;
+          backtickArgs.push(argArray[i]);
+        } else if (insideBackticks) {
+          backtickArgs.push(argArray[i]);
+          if (argArray[i].endsWith("`")) {
+            const fullArg = backtickArgs.join(" ").slice(1, -1);
+            argArray.splice(
+              i - backtickArgs.length + 1,
+              backtickArgs.length,
+              fullArg
+            );
+            i -= backtickArgs.length - 1;
+            backtickArgs = [];
+            insideBackticks = false;
+          }
+        }
+      }
+    }
     const filteredArgs = argArray.filter((arg) => arg !== "");
     actions.push({ Name: name, Arguments: filteredArgs });
     text = text.replace(fullMatch, "");
@@ -50,8 +74,8 @@ function parseLine(line) {
   return [text.trim(), actions];
 }
 
-let output = convertToOutput(input);
-let outputJson = JSON.stringify(output, null, 2);
-console.log(outputJson);
+let initialOutput = initialOutputFunction(input);
+let initialOutputJson = JSON.stringify(initialOutput, null, 2);
+
 //write to file
-fs.writeFileSync("./output.json", outputJson);
+fs.writeFileSync("./output.json", initialOutputJson);

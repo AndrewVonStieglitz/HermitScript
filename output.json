@@ -7,7 +7,7 @@
           {
             "Name": "SET",
             "Arguments": [
-              "Oranges",
+              "`Oranges`",
               "5"
             ]
           }
@@ -33,10 +33,17 @@
       },
       {
         "Text": "What's it for?",
-        "Actions": []
+        "Actions": [
+          {
+            "Name": "SETNAME",
+            "Arguments": [
+              "Andrew Von Stieglitz"
+            ]
+          }
+        ]
       },
       {
-        "Text": "A competition do you want to help? [Sure Would love to!](Sure) [Maybe Later](Maybe-Later) [No](No)",
+        "Text": "A competition do you want to help?",
         "Actions": []
       }
     ],
