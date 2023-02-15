@@ -2,93 +2,81 @@
   "Sandcastles": {
     "Start": [
       {
-        "Text": "What you got there?",
-        "Actions": [
+        "text": "What you got there?",
+        "actions": [
           {
-            "Name": "SET",
-            "Arguments": [
-              "`Oranges`",
-              "5"
-            ]
+            "name": "SET",
+            "arguments": ["`Oranges`", "5"]
           }
         ]
       },
       {
-        "Text": "A sandcastle",
-        "Actions": [
+        "text": "A sandcastle",
+        "actions": [
           {
-            "Name": "SHAKE",
-            "Arguments": [
-              "3",
-              "2"
-            ]
+            "name": "SHAKE",
+            "arguments": ["3", "2"]
           },
           {
-            "Name": "GET",
-            "Arguments": [
-              "Apples"
-            ]
+            "name": "GET",
+            "arguments": ["Apples"]
           }
         ]
       },
       {
-        "Text": "What's it for?",
-        "Actions": [
+        "text": "What's it for?",
+        "actions": [
           {
-            "Name": "SETNAME",
-            "Arguments": [
-              "Andrew Von Stieglitz"
-            ]
+            "name": "SETNAME",
+            "arguments": ["Andrew Von Stieglitz"]
           }
         ]
       },
       {
-        "Text": "A competition do you want to help?",
-        "Actions": []
+        "text": "A competition do you want to help?",
+        "actions": []
       }
     ],
     "Sure": [
       {
-        "Text": "Great! What do you want to do?",
-        "Actions": [
+        "text": "Great! What do you want to do?",
+        "actions": [
           {
-            "Name": "GET",
-            "Arguments": [
-              "Oranges"
-            ]
+            "name": "GET",
+            "arguments": ["Oranges"]
           },
           {
-            "Name": "Change",
-            "Arguments": []
+            "name": "Change",
+            "arguments": []
           }
         ]
       }
     ],
     "Maybe-Later": [
       {
-        "Text": "Ok, maybe later then.",
-        "Actions": []
+        "text": "Ok, maybe later then.",
+        "actions": []
       }
     ],
     "No": [
       {
-        "Text": "Ok, maybe later then.",
-        "Actions": []
+        "text": "Ok, maybe later then.",
+        "actions": []
       }
     ],
     "Build-the-castle": [
       {
-        "Text": "Ok, let's build the castle.",
-        "Actions": [
+        "text": "Ok, let's build the castle.",
+        "actions": [
           {
-            "Name": "Build",
-            "Arguments": []
+            "name": "Build",
+            "arguments": []
           }
         ]
       },
       {
-        "Text": "This might take a while.",
-        "Actions": []
+        "text": "This might take a while.",
+        "actions": []
       }
     ]
   }

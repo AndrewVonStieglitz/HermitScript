@@ -1,7 +1,7 @@
 const fs = require("fs");
 const input = fs.readFileSync("./input.md", "utf8");
 
-function initialOutputFunction(input) {
+function parseInput(input) {
   const output = {};
 
   let currentSection = null;
@@ -23,8 +23,8 @@ function initialOutputFunction(input) {
       // Parse line for actions
       const [text, actions] = parseLine(line);
       output[currentSection][currentSubSection].push({
-        Text: text,
-        Actions: actions,
+        text,
+        actions,
       });
     }
   });
@@ -40,21 +40,21 @@ function parseLine(line) {
   const regex = /<([A-Za-z]+)(\s+([^>]+))?>/g;
   let match;
   while ((match = regex.exec(line)) !== null) {
-    const [fullMatch, name, arguments] = match;
-    let argArray = [];
-    if (arguments) {
-      argArray = arguments.split(/\s+/);
+    const [fullMatch, actionName, argumentString] = match;
+    let arguments = [];
+    if (argumentString) {
+      arguments = argumentString.split(/\s+/);
       let insideBackticks = false;
       let backtickArgs = [];
-      for (let i = 0; i < argArray.length; i++) {
-        if (argArray[i].startsWith("`")) {
+      for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i].startsWith("`")) {
           insideBackticks = true;
-          backtickArgs.push(argArray[i]);
+          backtickArgs.push(arguments[i]);
         } else if (insideBackticks) {
-          backtickArgs.push(argArray[i]);
-          if (argArray[i].endsWith("`")) {
+          backtickArgs.push(arguments[i]);
+          if (arguments[i].endsWith("`")) {
             const fullArg = backtickArgs.join(" ").slice(1, -1);
-            argArray.splice(
+            arguments.splice(
               i - backtickArgs.length + 1,
               backtickArgs.length,
               fullArg
@@ -66,16 +66,16 @@ function parseLine(line) {
         }
       }
     }
-    const filteredArgs = argArray.filter((arg) => arg !== "");
-    actions.push({ Name: name, Arguments: filteredArgs });
+    const filteredArgs = arguments.filter((arg) => arg !== "");
+    actions.push({ name: actionName, arguments: filteredArgs });
     text = text.replace(fullMatch, "");
   }
 
   return [text.trim(), actions];
 }
 
-let initialOutput = initialOutputFunction(input);
-let initialOutputJson = JSON.stringify(initialOutput, null, 2);
+let output = parseInput(input);
+let outputJson = JSON.stringify(output, null, 2);
 
-//write to file
-fs.writeFileSync("./output.json", initialOutputJson);
+// Write output to file
+fs.writeFileSync("./output.json", outputJson);
