@@ -1,0 +1,15 @@
+{
+  "Sandcastles": {
+    "Conversation": ["This is a paragraph.", "This is another paragraph."],
+    "Second Conversation": [
+      "This is some more text.",
+      "This is some more text.",
+      "This is some more text.",
+      "This is some more text."
+    ]
+  },
+  "Discussion": {
+    "Start": ["lore ipsum", "lore ipsum dolor sit amet"],
+    "Second Discussion": ["This is some more text."]
+  }
+}
