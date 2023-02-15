@@ -8,7 +8,7 @@ I'm building a sandcastle.
 
 What's it for?
 
-Eve: It's for a competition. Want to help? <Shake 2 3>
+Eve: It's for a competition. Want to help?
 [Sure](https://www.example.com)
 [Maybe Later](https://www.example.com)
 [Not Right Now](https://www.example.com)
