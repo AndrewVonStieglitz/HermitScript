@@ -3,28 +3,37 @@
 ## Start
 
 What you got there?
-
-I'm building a sandcastle.
-
+A sandcastle
 What's it for?
-
-Eve: It's for a competition. Want to help?
-[Sure](https://www.example.com)
-[Maybe Later](https://www.example.com)
-[Not Right Now](https://www.example.com)
+A competition do you want to help? <PORTAL label:Sure goto:Sure> <PORTAL label:Maybe Later goto:Maybe-Later> <PORTAL label:No goto:No>
 
 ## Sure
 
-Great! Let's get started.
+Thats great! I'll get the tools
 
-Lets goo!
+## Maybe-Later
 
-## Maybe Later
+Aw, okay.
+Have a nice day!
 
-Oh ok then. Maybe later then.
+## No
 
-## Not Right Now
+Aww, okay.
+Maybe next time.
+Awesomesauce!
 
-I see. That's ok.
+# Space
 
-Yea sorry.
+## Start
+
+I want to go to space
+Do you want to go to space?
+
+## Yes
+
+Awesome! I'll get the rocket
+
+## No
+
+Okay, maybe next time
+Have a nice day!
