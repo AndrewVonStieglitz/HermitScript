@@ -1,0 +1,96 @@
+{
+  "Sandcastles": {
+    "Start": [
+      {
+        "Text": "What you got there?",
+        "Actions": [
+          {
+            "Name": "SET",
+            "Arguments": [
+              "Oranges",
+              "5"
+            ]
+          }
+        ]
+      },
+      {
+        "Text": "A sandcastle",
+        "Actions": [
+          {
+            "Name": "SHAKE",
+            "Arguments": [
+              "3",
+              "2"
+            ]
+          },
+          {
+            "Name": "GET",
+            "Arguments": [
+              "Apples"
+            ]
+          }
+        ]
+      },
+      {
+        "Text": "What's it for?",
+        "Actions": []
+      },
+      {
+        "Text": "A competition do you want to help?",
+        "Actions": [
+          {
+            "Name": "SAY",
+            "Arguments": [
+              "'Hello",
+              "World'"
+            ]
+          }
+        ]
+      }
+    ],
+    "Sure": [
+      {
+        "Text": "Great! What do you want to do?",
+        "Actions": [
+          {
+            "Name": "GET",
+            "Arguments": [
+              "Oranges"
+            ]
+          },
+          {
+            "Name": "Change",
+            "Arguments": []
+          }
+        ]
+      }
+    ],
+    "Maybe-Later": [
+      {
+        "Text": "Ok, maybe later then.",
+        "Actions": []
+      }
+    ],
+    "No": [
+      {
+        "Text": "Ok, maybe later then.",
+        "Actions": []
+      }
+    ],
+    "Build-the-castle": [
+      {
+        "Text": "Ok, let's build the castle.",
+        "Actions": [
+          {
+            "Name": "Build",
+            "Arguments": []
+          }
+        ]
+      },
+      {
+        "Text": "This might take a while.",
+        "Actions": []
+      }
+    ]
+  }
+}

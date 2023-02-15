@@ -2,38 +2,24 @@
 
 ## Start
 
-What you got there?
-A sandcastle
+What you got there? <SET Oranges 5>
+A sandcastle <SHAKE 3 2> <GET Apples>
 What's it for?
-A competition do you want to help? <PORTAL label:Sure goto:Sure> <PORTAL label:Maybe Later goto:Maybe-Later> <PORTAL label:No goto:No>
+A competition do you want to help?
 
 ## Sure
 
-Thats great! I'll get the tools
+Great! What do you want to do? <GET Oranges> <Change>
 
 ## Maybe-Later
 
-Aw, okay.
-Have a nice day!
+Ok, maybe later then.
 
 ## No
 
-Aww, okay.
-Maybe next time.
-Awesomesauce!
+Ok, maybe later then.
 
-# Space
+## Build-the-castle
 
-## Start
-
-I want to go to space
-Do you want to go to space?
-
-## Yes
-
-Awesome! I'll get the rocket
-
-## No
-
-Okay, maybe next time
-Have a nice day!
+Ok, let's build the castle. <Build>
+This might take a while.
