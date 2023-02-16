@@ -1,25 +1,24 @@
-# Sandcastles
+# Conversation 1
 
-## Start
+## Dialogue 1
 
-What you got there? <SET `Oranges` 5>
-A sandcastle <SHAKE 3 2> <GET Apples>
-What's it for? <SETNAME `Andrew Von Stieglitz`>
-A competition do you want to help?
+- Character A: Hello there!
+- Character B: Hi, how are you? <Help "Person", 22, 11> <Shake 3, 6>
+- Character A: I'm doing well, thanks. How about you? <Shake 4, 7>
+- Character B: I'm good too. What are you up to today? <Action>
+- Character A: Not much, just exploring the area. What about you?
+- Character B: I'm on a quest to find the magical sword of legend!
+  - options:
+    - text: Yes
+      goto: Dialogue 2
+    - text: No
+      goto: Dialogue 3
 
-## Sure
+## Dialogue 2
 
-Great! What do you want to do? <GET Oranges> <Change>
+- Character A: Wow, that sounds exciting. Do you need any help?
+- Character B: Sure, I could use a hand. Let's go! <StarQuest "magical asss sword", "flaming", 22>
 
-## Maybe-Later
+## Dialogue 3
 
-Ok, maybe later then.
-
-## No
-
-Ok, maybe later then.
-
-## Build-the-castle
-
-Ok, let's build the castle. <Build>
-This might take a while.
+- Character A: Oh, okay. Good luck with your quest!
