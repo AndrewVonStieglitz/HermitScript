@@ -6,7 +6,10 @@
         "actions": [
           {
             "name": "SET",
-            "arguments": ["`Oranges`", "5"]
+            "arguments": [
+              "`Oranges`",
+              "5"
+            ]
           }
         ]
       },
@@ -15,11 +18,16 @@
         "actions": [
           {
             "name": "SHAKE",
-            "arguments": ["3", "2"]
+            "arguments": [
+              "3",
+              "2"
+            ]
           },
           {
             "name": "GET",
-            "arguments": ["Apples"]
+            "arguments": [
+              "Apples"
+            ]
           }
         ]
       },
@@ -28,7 +36,9 @@
         "actions": [
           {
             "name": "SETNAME",
-            "arguments": ["Andrew Von Stieglitz"]
+            "arguments": [
+              "Andrew Von Stieglitz"
+            ]
           }
         ]
       },
@@ -43,7 +53,9 @@
         "actions": [
           {
             "name": "GET",
-            "arguments": ["Oranges"]
+            "arguments": [
+              "Oranges"
+            ]
           },
           {
             "name": "Change",
