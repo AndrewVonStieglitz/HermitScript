@@ -42,13 +42,16 @@ function parseOption(line) {
   return { text: text.trim(), next: next.trim() };
 }
 
-function convertJsonData(jsonData) {
-  let sections = jsonData.BigSection;
-  for (let key in sections) {
-    if (sections.hasOwnProperty(key)) {
-      let smallSections = sections[key];
-      for (let i = 0; i < smallSections.length; i++) {
-        let section = smallSections[i];
+function convertJsonData(yamlData) {
+  let jsonData = {};
+
+  for (let bigSectionName in yamlData) {
+    let bigSection = yamlData[bigSectionName];
+    let jsonDataBigSection = {};
+    for (let smallSectionName in bigSection) {
+      let smallSection = bigSection[smallSectionName];
+      for (let i = 0; i < smallSection.length; i++) {
+        let section = smallSection[i];
         if (section.text) {
           let regex = /<([^>]+)>/g;
           let matches = section.text.match(regex);
@@ -66,8 +69,11 @@ function convertJsonData(jsonData) {
           }
         }
       }
+      jsonDataBigSection[smallSectionName] = smallSection;
     }
+    jsonData[bigSectionName] = jsonDataBigSection;
   }
+
   return jsonData;
 }
 
