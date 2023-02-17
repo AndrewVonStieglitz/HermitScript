@@ -49,6 +49,5 @@ const customSyntax = fs.readFileSync("./index.md", "utf8");
 
 //convert to yaml
 const yamlOutput = convertToYAML(customSyntax);
-console.log(yamlOutput);
 const jsonData = yaml.load(yamlOutput);
 console.log(JSON.stringify(jsonData, null, 2));
