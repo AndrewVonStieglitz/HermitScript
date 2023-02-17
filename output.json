@@ -65,7 +65,7 @@
           {
             "action": "Jump",
             "arguments": [
-              " End"
+              "End"
             ]
           }
         ]
@@ -79,7 +79,7 @@
           {
             "action": "Wait",
             "arguments": [
-              " 3"
+              "3"
             ]
           }
         ]
@@ -107,7 +107,7 @@
           {
             "action": "Wait",
             "arguments": [
-              " 2"
+              "2"
             ]
           }
         ]
@@ -135,7 +135,7 @@
           {
             "action": "Wait",
             "arguments": [
-              " 2"
+              "2"
             ]
           }
         ]

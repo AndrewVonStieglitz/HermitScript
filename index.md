@@ -11,11 +11,11 @@ Eve: Pretty good, thanks for asking. How about you? <Set,Mood,Good> <Name,Michae
 
 ## Great
 
-Eve: That's fantastic to hear! <Jump, End>
+Eve: That's fantastic to hear! <Jump,End>
 
 ## Alright
 
-Eve: Well, at least it's not a bad day, right? <Wait, 3>
+Eve: Well, at least it's not a bad day, right? <Wait,3>
 Ruth: Yeah, it could be worse.
 
 - Yeah, it could be worse > Continue
@@ -23,7 +23,7 @@ Ruth: Yeah, it could be worse.
 
 ## NotGood
 
-Eve: Oh no, what's been going on? <Wait, 2>
+Eve: Oh no, what's been going on? <Wait,2>
 Ruth: I've just been feeling a bit overwhelmed with work and personal stuff.
 
 - Thanks for asking, but I don't want to talk about it > End
@@ -31,7 +31,7 @@ Ruth: I've just been feeling a bit overwhelmed with work and personal stuff.
 
 ## Talk
 
-Eve: I'm sorry to hear that. Is there anything I can do to help? <Wait, 2>
+Eve: I'm sorry to hear that. Is there anything I can do to help? <Wait,2>
 Ruth: No, I think I just need to take some time for myself and recharge.
 
 - Okay, take care > End
