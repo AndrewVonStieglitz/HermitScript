@@ -83,16 +83,30 @@ function convertJsonData(yamlData) {
   return jsonData;
 }
 
+function removeEmptyOptions(jsonData) {
+  for (let bigSectionName in jsonData) {
+    let bigSection = jsonData[bigSectionName];
+    for (let smallSectionName in bigSection) {
+      let smallSection = bigSection[smallSectionName];
+      for (let i = 0; i < smallSection.length; i++) {
+        let section = smallSection[i];
+        if (section.options.length === 0) {
+          delete section.options;
+        }
+      }
+    }
+  }
+}
+
 // Read input from index.md
 const markdownInput = fs.readFileSync("./index.md", "utf8");
 
 // Convert markdown to YAML
 const yamlOutput = convertToYAML(markdownInput);
+console.log(yamlOutput);
 const yamlData = yaml.load(yamlOutput);
-console.log(yamlData);
-
-// Convert YAML to JSON
 const jsonData = convertJsonData(yamlData);
+removeEmptyOptions(jsonData);
 const formattedJsonData = JSON.stringify(jsonData, null, 2);
 
 //write to output.json

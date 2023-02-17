@@ -4,7 +4,6 @@
       {
         "name": "Ruth",
         "text": "how are you?",
-        "options": [],
         "actions": [
           {
             "action": "Shake",
@@ -61,42 +60,35 @@
     "Great": [
       {
         "name": "Eve",
-        "text": "great!",
-        "options": []
+        "text": "great!"
       },
       {
         "name": "Ruth",
-        "text": "know, right?",
-        "options": []
+        "text": "know, right?"
       }
     ],
     "Good": [
       {
         "name": "Eve",
-        "text": "",
-        "options": []
+        "text": ""
       }
     ],
     "Bad": [
       {
         "name": "Eve",
-        "text": "want to talk about it?",
-        "options": []
+        "text": "want to talk about it?"
       },
       {
         "name": "Ruth",
-        "text": "I'm fine.",
-        "options": []
+        "text": "I'm fine."
       },
       {
         "name": "Eve",
-        "text": "but if you need to talk, I'm here for you.",
-        "options": []
+        "text": "but if you need to talk, I'm here for you."
       },
       {
         "name": "Ruth",
-        "text": "I know.",
-        "options": []
+        "text": "I know."
       }
     ]
   },
@@ -105,7 +97,6 @@
       {
         "name": "Ruth",
         "text": "how are you?",
-        "options": [],
         "actions": [
           {
             "action": "Shake",
@@ -162,42 +153,35 @@
     "Great": [
       {
         "name": "Eve",
-        "text": "great!",
-        "options": []
+        "text": "great!"
       },
       {
         "name": "Ruth",
-        "text": "know, right?",
-        "options": []
+        "text": "know, right?"
       }
     ],
     "Good": [
       {
         "name": "Eve",
-        "text": "",
-        "options": []
+        "text": ""
       }
     ],
     "Bad": [
       {
         "name": "Eve",
-        "text": "want to talk about it?",
-        "options": []
+        "text": "want to talk about it?"
       },
       {
         "name": "Ruth",
-        "text": "I'm fine.",
-        "options": []
+        "text": "I'm fine."
       },
       {
         "name": "Eve",
-        "text": "but if you need to talk, I'm here for you.",
-        "options": []
+        "text": "but if you need to talk, I'm here for you."
       },
       {
         "name": "Ruth",
-        "text": "I know.",
-        "options": []
+        "text": "I know."
       }
     ]
   }
