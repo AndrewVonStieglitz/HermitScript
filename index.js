@@ -1,8 +1,6 @@
 const fs = require("fs");
 const yaml = require("js-yaml");
 
-let step1Json = "";
-
 function convertToYAML(input) {
   const lines = input.split("\n").filter((line) => line.trim() !== "");
   const result = {};
@@ -44,8 +42,8 @@ function parseOption(line) {
   return { text: text.trim(), next: next.trim() };
 }
 
-function convertJSON(json) {
-  let sections = json.BigSection;
+function convertJsonData(jsonData) {
+  let sections = jsonData.BigSection;
   for (let key in sections) {
     if (sections.hasOwnProperty(key)) {
       let smallSections = sections[key];
@@ -70,15 +68,18 @@ function convertJSON(json) {
       }
     }
   }
-  return json;
+  return jsonData;
 }
 
-//read from index.md
-const customSyntax = fs.readFileSync("./index.md", "utf8");
+// Read input from index.md
+const markdownInput = fs.readFileSync("./index.md", "utf8");
 
-//convert to yaml
-const yamlOutput = convertToYAML(customSyntax);
-const jsonData = yaml.load(yamlOutput);
-const step1 = JSON.stringify(jsonData, null, 2);
-const step2 = convertJSON(jsonData);
-console.log(JSON.stringify(jsonData, null, 2));
+// Convert markdown to YAML
+const yamlOutput = convertToYAML(markdownInput);
+const yamlData = yaml.load(yamlOutput);
+
+// Convert YAML to JSON
+const jsonData = convertJsonData(yamlData);
+const formattedJsonData = JSON.stringify(jsonData, null, 2);
+
+console.log(formattedJsonData);
