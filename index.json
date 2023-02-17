@@ -1,166 +1,86 @@
 {
-	"BigSection": {
-	  "SmallSection": [
-		{
-		  "name": "Ruth",
-		  "text": "how are you? <Shake 10,10> <Set Apples,5>",
-		  "options": []
-		},
-		{
-		  "name": "Eve",
-		  "text": "fine, thanks. And you? <Name Andrew Von Stieglitz,23,Australia> <Set Apples,3>",
-		  "options": [
-			{
-			  "text": "I'm doing great",
-			  "next": "Great"
-			},
-			{
-			  "text": "I'm doing good",
-			  "next": "Good"
-			},
-			{
-			  "text": "I'm doing bad",
-			  "next": "Bad"
-			}
-		  ]
-		}
-	  ],
-	  "Great": [
-		{
-		  "name": "Eve",
-		  "text": "great!",
-		  "options": []
-		},
-		{
-		  "name": "Ruth",
-		  "text": "know, right?",
-		  "options": []
-		}
-	  ],
-	  "Good": [
-		{
-		  "name": "Eve",
-		  "text": "",
-		  "options": []
-		}
-	  ],
-	  "Bad": [
-		{
-		  "name": "Eve",
-		  "text": "want to talk about it?",
-		  "options": []
-		},
-		{
-		  "name": "Ruth",
-		  "text": "I'm fine.",
-		  "options": []
-		},
-		{
-		  "name": "Eve",
-		  "text": "but if you need to talk, I'm here for you.",
-		  "options": []
-		},
-		{
-		  "name": "Ruth",
-		  "text": "I know.",
-		  "options": []
-		}
-	  ]
-	}
+  "BigSection": {
+    "SmallSection": [
+      {
+        "name": "Ruth",
+        "text": "how are you?",
+        "options": [],
+        "actions": [
+          {
+            "shake": [10, 10]
+          },
+          {
+            "set": ["Apples", 5]
+          }
+        ]
+      },
+      {
+        "name": "Eve",
+        "text": "fine, thanks. And you?",
+        "options": [
+          {
+            "text": "I'm doing great",
+            "next": "Great"
+          },
+          {
+            "text": "I'm doing good",
+            "next": "Good"
+          },
+          {
+            "text": "I'm doing bad",
+            "next": "Bad"
+          }
+        ],
+        "actions": [
+          {
+            "name": ["Andrew Von Stieglitz", 23, "Australia"]
+          },
+          {
+            "set": ["Apples", 3]
+          }
+        ]
+      }
+    ],
+    "Great": [
+      {
+        "name": "Eve",
+        "text": "great!",
+        "options": []
+      },
+      {
+        "name": "Ruth",
+        "text": "know, right?",
+        "options": []
+      }
+    ],
+    "Good": [
+      {
+        "name": "Eve",
+        "text": "",
+        "options": []
+      }
+    ],
+    "Bad": [
+      {
+        "name": "Eve",
+        "text": "want to talk about it?",
+        "options": []
+      },
+      {
+        "name": "Ruth",
+        "text": "I'm fine.",
+        "options": []
+      },
+      {
+        "name": "Eve",
+        "text": "but if you need to talk, I'm here for you.",
+        "options": []
+      },
+      {
+        "name": "Ruth",
+        "text": "I know.",
+        "options": []
+      }
+    ]
   }
-  {
-	"BigSection": {
-	  "SmallSection": [
-		{
-		  "name": "Ruth",
-		  "text": "how are you?",
-		  "options": [],
-		  "actions": [
-			{
-			  "Shake": [
-				"10,10"
-			  ]
-			},
-			{
-			  "Set": [
-				"Apples,5"
-			  ]
-			}
-		  ]
-		},
-		{
-		  "name": "Eve",
-		  "text": "fine, thanks. And you?",
-		  "options": [
-			{
-			  "text": "I'm doing great",
-			  "next": "Great"
-			},
-			{
-			  "text": "I'm doing good",
-			  "next": "Good"
-			},
-			{
-			  "text": "I'm doing bad",
-			  "next": "Bad"
-			}
-		  ],
-		  "actions": [
-			{
-			  "Name": [
-				"Andrew",
-				"Von",
-				"Stieglitz,23,Australia"
-			  ]
-			},
-			{
-			  "Set": [
-				"Apples,3"
-			  ]
-			}
-		  ]
-		}
-	  ],
-	  "Great": [
-		{
-		  "name": "Eve",
-		  "text": "great!",
-		  "options": []
-		},
-		{
-		  "name": "Ruth",
-		  "text": "know, right?",
-		  "options": []
-		}
-	  ],
-	  "Good": [
-		{
-		  "name": "Eve",
-		  "text": "",
-		  "options": []
-		}
-	  ],
-	  "Bad": [
-		{
-		  "name": "Eve",
-		  "text": "want to talk about it?",
-		  "options": []
-		},
-		{
-		  "name": "Ruth",
-		  "text": "I'm fine.",
-		  "options": []
-		},
-		{
-		  "name": "Eve",
-		  "text": "but if you need to talk, I'm here for you.",
-		  "options": []
-		},
-		{
-		  "name": "Ruth",
-		  "text": "I know.",
-		  "options": []
-		}
-	  ]
-	}
-  }
+}
