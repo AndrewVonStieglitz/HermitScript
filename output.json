@@ -3,7 +3,7 @@
     "SmallSection": [
       {
         "name": "Ruth",
-        "text": "how are you?  ",
+        "text": "how are you?",
         "options": [],
         "actions": [
           {
@@ -24,7 +24,7 @@
       },
       {
         "name": "Eve",
-        "text": "fine, thanks. And you?  ",
+        "text": "fine, thanks. And you?",
         "options": [
           {
             "text": "I'm doing great",
@@ -104,7 +104,7 @@
     "SmallSection": [
       {
         "name": "Ruth",
-        "text": "how are you?  ",
+        "text": "how are you?",
         "options": [],
         "actions": [
           {
@@ -125,7 +125,7 @@
       },
       {
         "name": "Eve",
-        "text": "fine, thanks. And you?  ",
+        "text": "fine, thanks. And you?",
         "options": [
           {
             "text": "I'm doing great",

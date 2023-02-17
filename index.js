@@ -68,6 +68,12 @@ function convertJsonData(yamlData) {
             section.text = section.text.replace(regex, "");
           }
         }
+        // Trim whitespace from end of each string
+        for (let key in section) {
+          if (typeof section[key] === "string") {
+            section[key] = section[key].trim();
+          }
+        }
       }
       jsonDataBigSection[smallSectionName] = smallSection;
     }
