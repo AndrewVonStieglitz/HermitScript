@@ -1,21 +1,21 @@
 {
-  "BigSection": {
-    "SmallSection": [
+  "My Conversation": {
+    "Introduction": [
       {
         "name": "Ruth",
-        "text": "how are you?",
+        "text": "there, how's it going?",
         "actions": [
-          {
-            "action": "Shake",
-            "arguments": [
-              "10",
-              "10"
-            ]
-          },
           {
             "action": "Set",
             "arguments": [
-              "Apples",
+              "Mood",
+              "Neutral"
+            ]
+          },
+          {
+            "action": "Shake",
+            "arguments": [
+              "5",
               "5"
             ]
           }
@@ -23,35 +23,35 @@
       },
       {
         "name": "Eve",
-        "text": "fine, thanks. And you?",
+        "text": "good, thanks for asking. How about you?",
         "options": [
           {
-            "text": "I'm doing great",
+            "text": "I'm feeling great today",
             "next": "Great"
           },
           {
-            "text": "I'm doing good",
-            "next": "Good"
+            "text": "I'm feeling alright",
+            "next": "Alright"
           },
           {
-            "text": "I'm doing bad",
-            "next": "Bad"
+            "text": "I'm not feeling too good",
+            "next": "NotGood"
           }
         ],
         "actions": [
           {
-            "action": "Name",
+            "action": "Set",
             "arguments": [
-              "Andrew Von Stieglitz",
-              "23",
-              "Australia"
+              "Mood",
+              "Good"
             ]
           },
           {
-            "action": "Set",
+            "action": "Name",
             "arguments": [
-              "Apples",
-              "3"
+              "Michael Smith",
+              "35",
+              "USA"
             ]
           }
         ]
@@ -60,128 +60,158 @@
     "Great": [
       {
         "name": "Eve",
-        "text": "great!"
-      },
-      {
-        "name": "Ruth",
-        "text": "know, right?"
-      }
-    ],
-    "Good": [
-      {
-        "name": "Eve",
-        "text": ""
-      }
-    ],
-    "Bad": [
-      {
-        "name": "Eve",
-        "text": "want to talk about it?"
-      },
-      {
-        "name": "Ruth",
-        "text": "I'm fine."
-      },
-      {
-        "name": "Eve",
-        "text": "but if you need to talk, I'm here for you."
-      },
-      {
-        "name": "Ruth",
-        "text": "I know."
-      }
-    ]
-  },
-  "BigSection2": {
-    "SmallSection": [
-      {
-        "name": "Ruth",
-        "text": "how are you?",
+        "text": "fantastic to hear!",
         "actions": [
           {
-            "action": "Shake",
+            "action": "Jump",
             "arguments": [
-              "10",
-              "10"
+              " End"
             ]
-          },
+          }
+        ]
+      }
+    ],
+    "Alright": [
+      {
+        "name": "Eve",
+        "text": "at least it's not a bad day, right?",
+        "actions": [
           {
-            "action": "Set",
+            "action": "Wait",
             "arguments": [
-              "Apples",
-              "5"
+              " 3"
             ]
           }
         ]
       },
       {
-        "name": "Eve",
-        "text": "fine, thanks. And you?",
+        "name": "Ruth",
+        "text": "it could be worse.",
         "options": [
           {
-            "text": "I'm doing great",
-            "next": "Great"
+            "text": "Yeah, it could be worse",
+            "next": "Continue"
           },
           {
-            "text": "I'm doing good",
-            "next": "Good"
-          },
-          {
-            "text": "I'm doing bad",
-            "next": "Bad"
+            "text": "Actually, it's been a tough day",
+            "next": "NotGood"
           }
-        ],
+        ]
+      }
+    ],
+    "NotGood": [
+      {
+        "name": "Eve",
+        "text": "no, what's been going on?",
         "actions": [
           {
-            "action": "Name",
+            "action": "Wait",
             "arguments": [
-              "Andrew Von Stieglitz",
-              "23",
-              "Australia"
+              " 2"
             ]
+          }
+        ]
+      },
+      {
+        "name": "Ruth",
+        "text": "just been feeling a bit overwhelmed with work and personal stuff.",
+        "options": [
+          {
+            "text": "Thanks for asking, but I don't want to talk about it",
+            "next": "End"
           },
+          {
+            "text": "Actually, it would be good to talk about it",
+            "next": "Talk"
+          }
+        ]
+      }
+    ],
+    "Talk": [
+      {
+        "name": "Eve",
+        "text": "sorry to hear that. Is there anything I can do to help?",
+        "actions": [
+          {
+            "action": "Wait",
+            "arguments": [
+              " 2"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ruth",
+        "text": "I think I just need to take some time for myself and recharge.",
+        "options": [
+          {
+            "text": "Okay, take care",
+            "next": "End"
+          },
+          {
+            "text": "Want to grab a coffee and chat?",
+            "next": "Coffee"
+          }
+        ]
+      }
+    ],
+    "Coffee": [
+      {
+        "name": "Eve",
+        "text": "let's go.",
+        "actions": [
           {
             "action": "Set",
             "arguments": [
-              "Apples",
-              "3"
+              "Location",
+              "CoffeeShop"
+            ]
+          },
+          {
+            "action": "Jump",
+            "arguments": [
+              " End"
             ]
           }
         ]
       }
     ],
-    "Great": [
+    "End": [
       {
         "name": "Eve",
-        "text": "great!"
+        "text": "it was nice talking to you.",
+        "actions": [
+          {
+            "action": "Wait",
+            "arguments": [
+              " 2"
+            ]
+          }
+        ]
       },
       {
         "name": "Ruth",
-        "text": "know, right?"
-      }
-    ],
-    "Good": [
-      {
-        "name": "Eve",
-        "text": ""
-      }
-    ],
-    "Bad": [
-      {
-        "name": "Eve",
-        "text": "want to talk about it?"
-      },
-      {
-        "name": "Ruth",
-        "text": "I'm fine."
+        "text": "you too.",
+        "actions": [
+          {
+            "action": "Wait",
+            "arguments": [
+              " 2"
+            ]
+          }
+        ]
       },
       {
         "name": "Eve",
-        "text": "but if you need to talk, I'm here for you."
-      },
-      {
-        "name": "Ruth",
-        "text": "I know."
+        "text": "",
+        "actions": [
+          {
+            "action": "Wait",
+            "arguments": [
+              " 2"
+            ]
+          }
+        ]
       }
     ]
   }
