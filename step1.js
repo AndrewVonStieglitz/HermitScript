@@ -1,6 +1,8 @@
 const fs = require("fs");
 const yaml = require("js-yaml");
 
+let step1Json = "";
+
 function convertToYAML(input) {
   const lines = input.split("\n").filter((line) => line.trim() !== "");
   const result = {};
@@ -47,6 +49,6 @@ const customSyntax = fs.readFileSync("./index.md", "utf8");
 
 //convert to yaml
 const yamlOutput = convertToYAML(customSyntax);
-console.log(yamlOutput);
+//console.log(yamlOutput);
 const jsonData = yaml.load(yamlOutput);
 console.log(JSON.stringify(jsonData, null, 2));

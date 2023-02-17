@@ -2,8 +2,8 @@
 
 ## SmallSection
 
-Ruth: Hello, how are you?
-Eve: I'm fine, thanks. And you?
+Ruth: Hello, how are you? <Shake 10,10> <Set Apples,5>
+Eve: I'm fine, thanks. And you? <Name Andrew Von Stieglitz,23,Australia> <Set Apples,3>
 
 - I'm doing great > Great
 - I'm doing good > Good
