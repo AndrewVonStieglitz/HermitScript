@@ -1,3 +1,4 @@
+const fs = require("fs");
 const yaml = require("js-yaml");
 
 function convertToYAML(input) {
@@ -27,8 +28,13 @@ function convertToYAML(input) {
 }
 
 function parseLine(line) {
-  const [name, text] = line.split(": ");
-  return { [name]: text.trim(), options: [] };
+  const [name, text, ...tags] = line.split(" ");
+  const result = {
+    name: name.slice(0, -1),
+    text: tags.join(" ").trim(),
+    options: [],
+  };
+  return result;
 }
 
 function parseOption(line) {
@@ -37,10 +43,10 @@ function parseOption(line) {
 }
 
 //read from index.md
-const fs = require("fs");
 const customSyntax = fs.readFileSync("./index.md", "utf8");
 
 //convert to yaml
 const yamlOutput = convertToYAML(customSyntax);
+console.log(yamlOutput);
 const jsonData = yaml.load(yamlOutput);
 console.log(JSON.stringify(jsonData, null, 2));
