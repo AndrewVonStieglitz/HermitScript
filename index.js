@@ -103,7 +103,6 @@ const markdownInput = fs.readFileSync("./index.md", "utf8");
 
 // Convert markdown to YAML
 const yamlOutput = convertToYAML(markdownInput);
-console.log(yamlOutput);
 const yamlData = yaml.load(yamlOutput);
 const jsonData = convertJsonData(yamlData);
 removeEmptyOptions(jsonData);

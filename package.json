@@ -1,5 +1,24 @@
 {
+  "name": "hermitscript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "dependencies": {
     "js-yaml": "^4.1.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewVonStieglitz/HermitScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrewVonStieglitz/HermitScript/issues"
+  },
+  "homepage": "https://github.com/AndrewVonStieglitz/HermitScript#readme"
 }
