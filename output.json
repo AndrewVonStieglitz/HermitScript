@@ -3,12 +3,28 @@
     "SmallSection": [
       {
         "name": "Ruth",
-        "text": "how are you? <Shake,10,10> <Set,Apples,5>",
-        "options": []
+        "text": "how are you?  ",
+        "options": [],
+        "actions": [
+          {
+            "action": "Shake",
+            "arguments": [
+              "10",
+              "10"
+            ]
+          },
+          {
+            "action": "Set",
+            "arguments": [
+              "Apples",
+              "5"
+            ]
+          }
+        ]
       },
       {
         "name": "Eve",
-        "text": "fine, thanks. And you? <Name,Andrew Von Stieglitz,23,Australia> <Set,Apples,3>",
+        "text": "fine, thanks. And you?  ",
         "options": [
           {
             "text": "I'm doing great",
@@ -21,6 +37,23 @@
           {
             "text": "I'm doing bad",
             "next": "Bad"
+          }
+        ],
+        "actions": [
+          {
+            "action": "Name",
+            "arguments": [
+              "Andrew Von Stieglitz",
+              "23",
+              "Australia"
+            ]
+          },
+          {
+            "action": "Set",
+            "arguments": [
+              "Apples",
+              "3"
+            ]
           }
         ]
       }
@@ -47,7 +80,7 @@
     "Bad": [
       {
         "name": "Eve",
-        "text": "want to talk about it? <Flash,2,2> <Scream,help help,7>",
+        "text": "want to talk about it?",
         "options": []
       },
       {
@@ -65,6 +98,7 @@
         "text": "I know.",
         "options": []
       }
-    ]
+    ],
+    "BigSection": []
   }
 }

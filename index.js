@@ -82,4 +82,5 @@ const yamlData = yaml.load(yamlOutput);
 const jsonData = convertJsonData(yamlData);
 const formattedJsonData = JSON.stringify(jsonData, null, 2);
 
-console.log(formattedJsonData);
+//write to output.json
+fs.writeFileSync("./output.json", formattedJsonData);
