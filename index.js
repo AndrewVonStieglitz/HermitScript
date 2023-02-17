@@ -44,10 +44,41 @@ function parseOption(line) {
   return { text: text.trim(), next: next.trim() };
 }
 
+function convertJSON(json) {
+  let sections = json.BigSection;
+  for (let key in sections) {
+    if (sections.hasOwnProperty(key)) {
+      let smallSections = sections[key];
+      for (let i = 0; i < smallSections.length; i++) {
+        let section = smallSections[i];
+        if (section.text) {
+          let regex = /<([^>]+)>/g;
+          let matches = section.text.match(regex);
+          if (matches) {
+            section.actions = [];
+            for (let j = 0; j < matches.length; j++) {
+              let match = matches[j];
+              let parts = match.slice(1, -1).split(",");
+              section.actions.push({
+                action: parts[0],
+                arguments: parts.slice(1),
+              });
+            }
+            section.text = section.text.replace(regex, "");
+          }
+        }
+      }
+    }
+  }
+  return json;
+}
+
 //read from index.md
 const customSyntax = fs.readFileSync("./index.md", "utf8");
 
 //convert to yaml
 const yamlOutput = convertToYAML(customSyntax);
 const jsonData = yaml.load(yamlOutput);
+const step1 = JSON.stringify(jsonData, null, 2);
+const step2 = convertJSON(jsonData);
 console.log(JSON.stringify(jsonData, null, 2));
