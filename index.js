@@ -77,6 +77,7 @@ const markdownInput = fs.readFileSync("./index.md", "utf8");
 // Convert markdown to YAML
 const yamlOutput = convertToYAML(markdownInput);
 const yamlData = yaml.load(yamlOutput);
+console.log(yamlData);
 
 // Convert YAML to JSON
 const jsonData = convertJsonData(yamlData);
