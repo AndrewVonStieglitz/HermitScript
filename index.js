@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 const yaml = require("js-yaml");
 
 function convertToYAML(input) {
@@ -98,15 +99,25 @@ function removeEmptyOptions(jsonData) {
   }
 }
 
-// Read input from index.md
-const markdownInput = fs.readFileSync("./index.md", "utf8");
+// Get list of markdown files in current directory
+const mdFiles = fs
+  .readdirSync(".")
+  .filter((filename) => filename.endsWith(".md"));
 
-// Convert markdown to YAML
-const yamlOutput = convertToYAML(markdownInput);
-const yamlData = yaml.load(yamlOutput);
-const jsonData = convertJsonData(yamlData);
-removeEmptyOptions(jsonData);
-const formattedJsonData = JSON.stringify(jsonData, null, 2);
+mdFiles.forEach((mdFile) => {
+  // Read input from markdown file
+  const markdownInput = fs.readFileSync(mdFile, "utf8");
 
-//write to output.json
-fs.writeFileSync("./output.json", formattedJsonData);
+  // Convert markdown to YAML
+  const yamlOutput = convertToYAML(markdownInput);
+  const yamlData = yaml.load(yamlOutput);
+  const jsonData = convertJsonData(yamlData);
+  removeEmptyOptions(jsonData);
+  const formattedJsonData = JSON.stringify(jsonData, null, 2);
+
+  // Write output to JSON file with same name as markdown file
+  const jsonFile = path.basename(mdFile, ".md") + ".json";
+  fs.writeFileSync(jsonFile, formattedJsonData);
+
+  console.log(`Output written to ${jsonFile}`);
+});
